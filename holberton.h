@@ -12,6 +12,10 @@ typedef struct op
 	int (*f)(va_list);
 } op_t;
 
-int print_c(
+int print_c(va_list, valist);
+int print_s(va_list, valist);
+int print_per(__attribute__((unused))va_list valist);
+int print_i(va_list, valist);
+
 
 #endif
