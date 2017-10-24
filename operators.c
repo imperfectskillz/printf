@@ -55,3 +55,29 @@ int print_per(__attribute__((unused))va_list valist)
 
 int print_i(va_list valist)
 {
+	int n;
+	int len;
+	unsigned int num;
+
+	n = va_arg(valist, int);
+
+
+	if (n < 0)
+	{
+		len += _write('-');
+		num = n * -1;
+	}
+	else
+		num = n;
+
+	for (; num / div > 9; )
+		div *= 10;
+
+	for (; div != 0; )
+	{
+		len += _write('0' + num /div);
+		num %= div;
+		div /= 10;
+	}
+	return (len);
+}
